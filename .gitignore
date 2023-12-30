@@ -1,0 +1,6 @@
+.env
+Pipfile.lock
+/migrations
+.qiniu_pythonsdk_hostscache.json
+scheduler.lock
+__pycache__
