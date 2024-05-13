@@ -149,7 +149,7 @@ class WeixinMp(WeixinBase):
         if 'errcode' not in res:
             current_app.logger.error(f"微信内容安全校验异常: {res}")
             raise WeixinAPIError
-        if res['result']['suggest'] != 'pass':
+        if 'suggest' in res['result'] and res['result']['suggest'] != 'pass':
             current_app.logger.warning(f"内容校验发现敏感信息: {res}")
             return False
         return True
