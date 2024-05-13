@@ -96,7 +96,7 @@ class WeixinMp(WeixinBase):
             raise WeixinAPIError
 
         self.session_key = res['session_key']
-        current_app.logger.error(f"微信获取openid成功: {res}")
+        current_app.logger.info(f"微信获取openid成功: {res}")
         return res
 
     def send_subscribe(self, openid, template_id, msg_data, mp_page=None, mp_state='formal', lang='zh_CN'):

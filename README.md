@@ -66,7 +66,7 @@ pip install -r requirements.txt
 
 若需要修改数据库模型，在 `model` 模型包中修改对应模型的字段后，执行下方命令。需要注意，必须配置好环境变量才可运行
 
-```
+```shell
 # 初始化数据库
 flask db init
 
@@ -81,6 +81,12 @@ flask db upgrade
 
 ```shell
 python starter.py
+```
+
+**8. 导出依赖（无需执行）**
+
+```shell
+pipenv run pip freeze > requirements.txt
 ```
 
 ## 生产使用
@@ -101,7 +107,7 @@ docker run -d -p 5000:5000 -v $(pwd):/root/july-server --env-file .env --name ju
 
 ```shell
 # 运行
-gunicorn -c gconfig.py starter:app
+gunicorn -w 1 -b 0.0.0.0:5000 starter:app --worker-class eventlet --reload
 
 # 停止
 ps aux | grep gunicorn | awk '{print $2}' | xargs kill -9
