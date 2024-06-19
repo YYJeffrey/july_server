@@ -146,7 +146,7 @@ class WeixinMp(WeixinBase):
             current_app.logger.error(f"微信接口调用异常: {e}")
             raise WeixinAPIError
 
-        if 'errcode' not in res:
+        if 'errcode' in res and res['errcode'] != 0:
             current_app.logger.error(f"微信内容安全校验异常: {res}")
             raise WeixinAPIError
         if 'suggest' in res['result'] and res['result']['suggest'] != 'pass':
