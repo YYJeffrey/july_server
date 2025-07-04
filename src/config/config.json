@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": null,
+    "database": "ginco_miniapp_dev",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "ginco_miniapp_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "PLEASE_CONFIGURE_PROD_USER",
+    "password": "PLEASE_CONFIGURE_PROD_PASSWORD",
+    "database": "PLEASE_CONFIGURE_PROD_DB",
+    "host": "PLEASE_CONFIGURE_PROD_HOST",
+    "dialect": "mysql"
+  }
+}
